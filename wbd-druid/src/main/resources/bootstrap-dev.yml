@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    nacos:
+      username: tms
+      password: itheima123
+      discovery:
+        server-addr: 1.117.109.214:8848
+        group: wubida-tms
+        namespace: 08402090-7563-4504-b102-ece044cda67e
+      config:
+        server-addr: 1.117.109.214:8848
+        file-extension: yml
+        group: wubida-tms
+        namespace: 08402090-7563-4504-b102-ece044cda67e
+  # jackson时间格式化
+  jackson:
+    time-zone: ${spring.jackson.time-zone}
+    date-format: ${spring.jackson.date-format}
+  servlet:
+    multipart:
+      max-file-size: ${spring.servlet.multipart.max-file-size}
+      max-request-size: ${spring.servlet.multipart.max-request-size}
+      enabled: ${spring.servlet.multipart.enabled}
+
+  datasource:
+    driver-class-name: ${spring.datasource.driver-class-name}
+    url: ${spring.datasource.url}

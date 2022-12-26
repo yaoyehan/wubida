@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>wubida-tms-java</artifactId>
+        <groupId>com.yyh</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>wbd-service-api</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>wbd-service-base-api</module>
+        <module>wbd-service-oms-api</module>
+        <module>wbd-service-work-api</module>
+        <module>wbd-service-user-api</module>
+        <module>wbd-service-aggregation-api</module>
+        <module>wbd-service-base-domain</module>
+        <module>wbd-service-oms-domain</module>
+        <module>wbd-service-work-domain</module>
+        <module>wbd-service-user-domain</module>
+        <module>wbd-service-aggregation-domain</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.18.Final</version>
+        </dependency>
+    </dependencies>
+</project>

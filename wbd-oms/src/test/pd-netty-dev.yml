@@ -1,0 +1,24 @@
+spring:
+    # jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+  kafka:
+    bootstrap-servers: 1.117.109.214:9092
+    listener:   # 指定listener 容器中的线程数，用于提高并发量
+      concurrency: 5
+    producer:
+      retries: 3
+      batch-size: 10000
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: wbdtruck  
+netty:
+  port: 10001

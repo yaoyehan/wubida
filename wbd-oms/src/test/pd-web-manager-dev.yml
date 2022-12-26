@@ -1,0 +1,34 @@
+spring:
+    # jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+#ribbon:
+###指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间。
+# ReadTimeout: 5000
+###指的是建立连接后从服务器读取到可用资源所用的时间。
+# ConnectTimeout: 5000
+
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
+seata:
+  enabled: true
+  application-id: ${spring.application.name}  # 可以自定义
+  tx-service-group: yyh_tx_group # 此处的名称一定要与 vgroup-mapping下配置的参数保持一致
+  registry:
+    file:
+    #因为seata版本驼峰参数映射有问题导致，seata的zk配置参数设置不上导致异常，所以采用了file方式
+      name: registry.conf 
+  service:
+    grouplist:
+      # seata seaver的 地址配置，此处可以集群配置是个数组
+      default: 1.117.109.214:8091 
+    vgroup-mapping:
+     # key一定要与tx-service-group一致
+      yyh_tx_group: default

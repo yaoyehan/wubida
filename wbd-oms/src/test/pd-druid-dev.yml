@@ -1,0 +1,13 @@
+spring:
+    # jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+  datasource:
+    driver-class-name: org.apache.calcite.avatica.remote.Driver
+    url: jdbc:avatica:remote:url=http://tms-druid.yyh.net/druid/v2/sql/avatica/

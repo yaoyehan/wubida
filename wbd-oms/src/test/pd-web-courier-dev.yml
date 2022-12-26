@@ -1,0 +1,39 @@
+spring:
+    # jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+  redis:
+    database: 0
+    host: 111.231.76.210
+    port: 56379
+    password: DomToretto@diesel@926983
+    timeout: 5000
+    ssl: false
+    pool:
+      max-active: 7
+      max-wait: -1
+      min-idle: 0
+      max-idle: 10
+      test-while-idle: true
+      test-on-create: true
+seata:
+  enabled: true
+  application-id: ${spring.application.name}  # 可以自定义
+  tx-service-group: yyh_tx_group # 此处的名称一定要与 vgroup-mapping下配置的参数保持一致
+  registry:
+    file:
+    #因为seata版本驼峰参数映射有问题导致，seata的zk配置参数设置不上导致异常，所以采用了file方式
+      name: registry.conf 
+  service:
+    grouplist:
+      # seata seaver的 地址配置，此处可以集群配置是个数组
+      default: 1.117.109.214:8091 
+    vgroup-mapping:
+     # key一定要与tx-service-group一致
+      yyh_tx_group: default
